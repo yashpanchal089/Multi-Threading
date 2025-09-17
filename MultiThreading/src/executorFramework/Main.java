@@ -3,12 +3,10 @@ package executorFramework;
 import java.util.concurrent.*;
 
 public class Main {
-    public static void main(String[] args) throws ExecutionException, InterruptedException {
+    public static void main(String[] args) {
         ExecutorService executorService = Executors.newSingleThreadExecutor();
-        Callable<String> callable = () -> "Hello";
-        Future<?> future = executorService.submit(callable);
-        future.get();
-        executorService.shutdown();
-    }
+        executorService.submit(()-> 42);
+
+
 
 }
