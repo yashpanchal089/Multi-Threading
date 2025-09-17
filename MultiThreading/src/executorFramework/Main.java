@@ -1,36 +1,14 @@
 package executorFramework;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 
 public class Main {
-    public static void main(String[] args) {
-        long startTime = System.currentTimeMillis();
-        ExecutorService executor = Executors.newFixedThreadPool(3);
-
-        for (int  i = 1; i < 10; i++){
-            int finalI = i;
-            executor.submit(() -> {
-                long result = factorial(finalI);
-                System.out.println(result);
-            });
-
-        }
-        executor.shutdown();
-        System.out.println("Total time : "+ (System.currentTimeMillis() - startTime));
+    public static void main(String[] args) throws ExecutionException, InterruptedException {
+        ExecutorService executorService = Executors.newSingleThreadExecutor();
+//        Callable<String> callable = () -> "Hello";
+        Future<? > future = executorService.submit(() ->System.out.println("Hello"));
+//        future.get();
+        executorService.shutdown();
     }
 
-    private static long factorial(int n){
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        long result = 1;
-        for (int i = 1; i<= n; i++){
-            result *= i;
-        }
-        return result;
-    }
 }
