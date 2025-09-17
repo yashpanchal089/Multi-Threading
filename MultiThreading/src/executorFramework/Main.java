@@ -2,11 +2,12 @@ package executorFramework;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 public class Main {
     public static void main(String[] args) {
         long startTime = System.currentTimeMillis();
-        ExecutorService executor = Executors.newFixedThreadPool(9);
+        ExecutorService executor = Executors.newFixedThreadPool(3);
 
         for (int  i = 1; i < 10; i++){
             int finalI = i;
@@ -16,7 +17,7 @@ public class Main {
             });
 
         }
-
+        executor.shutdown();
         System.out.println("Total time : "+ (System.currentTimeMillis() - startTime));
     }
 
