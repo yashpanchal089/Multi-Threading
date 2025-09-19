@@ -11,14 +11,14 @@ public class ThreadSleepDemo {
         System.out.println("End after 2 seconds");
 
 
-//        for (int i = 0; i <= 5; i++) {
-//            System.out.println("Count of i : " + i);
-//            try {
-//                Thread.sleep(2000);
-//            } catch (InterruptedException e) {
-//                throw new RuntimeException(e);
-//            }
-//        }
+        for (int i = 0; i <= 5; i++) {
+            System.out.println("Count of i : " + i);
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }
 
         Thread t = new Thread(() -> {
             try{
