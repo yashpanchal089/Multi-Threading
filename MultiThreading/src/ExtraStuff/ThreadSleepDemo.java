@@ -3,12 +3,12 @@ package ExtraStuff;
 public class ThreadSleepDemo {
 
     public static void main(String[] args) {
-//        System.out.println("Start");
-//        try{
-//        Thread.sleep(2000);
-//        } catch ( InterruptedException _){
-//        }
-//        System.out.println("End after 2 seconds");
+        System.out.println("Start");
+        try{
+        Thread.sleep(2000);
+        } catch ( InterruptedException _){
+        }
+        System.out.println("End after 2 seconds");
 
 
 //        for (int i = 0; i <= 5; i++) {
