@@ -2,23 +2,23 @@ package ExtraStuff;
 
 public class ThreadJoinDemo {
     public static void main(String[] args) throws InterruptedException {
+        // Ex = 1
+        Thread worker = new Thread(() -> {
+           for ( int i =0; i<=5; i++){
+               System.out.println("Worker thread: " +i);
+               try {
+                   Thread.sleep(1000);
+               } catch (InterruptedException e) {
 
-//        Thread worker = new Thread(() -> {
-//           for ( int i =0; i<=5; i++){
-//               System.out.println("Worker thread: " +i);
-//               try {
-//                   Thread.sleep(1000);
-//               } catch (InterruptedException e) {
-//
-//               }
-//           }
-//        });
-//
-//        worker.start();
-//
-//        worker.join();
-//
-//        System.out.println("Main thread finished after worker");
+               }
+           }
+        });
+
+        worker.start();
+
+        worker.join();
+
+        System.out.println("Main thread finished after worker");
 
         // Ex = 2
         Thread t1 = new Thread(() -> {
