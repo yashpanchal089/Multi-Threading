@@ -20,28 +20,31 @@ public class ThreadJoinDemo {
 //
 //        System.out.println("Main thread finished after worker");
 
-//        Thread t1 = new Thread(() -> {
-//            try {
-//                Thread.sleep(1000);
-//            } catch (InterruptedException e) {
-//            }
-//            System.out.println("Thread 1 finished");
-//        });
-//        Thread t2 = new Thread(() -> {
-//            try {
-//                Thread.sleep(2000);
-//            } catch (InterruptedException e) {
-//            }
-//            System.out.println("Thread 2 finished");
-//        });
-//
-//        t1.start();
-//        t2.start();
-//
-//        t1.join();
-//        t2.join();
-//
-//        System.out.println("Main 2 thread finished after worker");
+        // Ex = 2
+        Thread t1 = new Thread(() -> {
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+            }
+            System.out.println("Thread 1 finished");
+        });
+        Thread t2 = new Thread(() -> {
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+            }
+            System.out.println("Thread 2 finished");
+        });
+
+        t1.start();
+        t2.start();
+
+        t1.join();
+        t2.join();
+
+        System.out.println("Main 2 thread finished after worker");
+
+        // Ex = 3
 
         Thread slow = new Thread(() -> {
             try {
