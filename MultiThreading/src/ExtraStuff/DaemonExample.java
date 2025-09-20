@@ -50,7 +50,5 @@ public class DaemonExample {
 
         t.start();
         t.setDaemon(true);
-
-
     }
 }
