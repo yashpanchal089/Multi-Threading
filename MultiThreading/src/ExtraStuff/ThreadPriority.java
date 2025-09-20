@@ -11,7 +11,7 @@ public class ThreadPriority {
             System.out.println("Thread 2 is running " + Thread.currentThread().getPriority());
         });
 
-        t1.setPriority(Thread.MIN_PRIORITY);
+            t1.setPriority(Thread.MIN_PRIORITY);
         t2.setPriority(Thread.MAX_PRIORITY);
 
         t1.start();
