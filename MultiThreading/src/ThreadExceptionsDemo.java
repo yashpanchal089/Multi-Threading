@@ -53,7 +53,5 @@ public class ThreadExceptionsDemo {
 
         pool.shutdown();
 
-
-
     }
 }
